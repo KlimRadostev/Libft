@@ -6,7 +6,7 @@
 /*   By: kradoste <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/19 16:25:57 by kradoste          #+#    #+#             */
-/*   Updated: 2018/04/21 23:22:16 by kradoste         ###   ########.fr       */
+/*   Updated: 2018/04/21 23:32:10 by kradoste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ char		*ft_itoa(int n)
 	}
 	while (i < x)
 	{
-		str[i++] = (ft_abs(n / tenner) % 10) + 48;
+		str[i++] = ft_abs((n / tenner) % 10) + 48;
 		tenner /= 10;
 	}
 	return (str);
