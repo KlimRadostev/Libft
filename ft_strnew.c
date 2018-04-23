@@ -6,7 +6,7 @@
 /*   By: kradoste <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/18 12:57:24 by kradoste          #+#    #+#             */
-/*   Updated: 2018/04/21 22:59:31 by kradoste         ###   ########.fr       */
+/*   Updated: 2018/04/22 19:51:58 by kradoste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,5 @@
 
 char	*ft_strnew(size_t size)
 {
-	if (size <= 0)
-		return ((void *)0);
 	return ((char *)ft_memalloc(size + 1));
 }

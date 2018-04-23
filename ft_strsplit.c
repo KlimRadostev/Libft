@@ -6,7 +6,7 @@
 /*   By: kradoste <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/19 00:33:59 by kradoste          #+#    #+#             */
-/*   Updated: 2018/04/21 22:58:45 by kradoste         ###   ########.fr       */
+/*   Updated: 2018/04/22 18:54:54 by kradoste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ static char		**word_count_malloc(char *s, char c)
 	}
 	if (!(dstr = (char **)malloc(sizeof(char *) * (words + 1))))
 		return ((void *)0);
+	dstr[words] = (void *)0;
 	return (dstr);
 }
 
@@ -54,7 +55,7 @@ char			**ft_strsplit(char const *s, char c)
 	size_t	letters;
 	size_t	i;
 
-	if (!(dstr = word_count_malloc((char *)s, c)))
+	if (!s || !(dstr = word_count_malloc((char *)s, c)))
 		return ((void *)0);
 	i = 0;
 	words = 0;
