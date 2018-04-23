@@ -6,7 +6,7 @@
 /*   By: kradoste <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/16 16:16:35 by kradoste          #+#    #+#             */
-/*   Updated: 2018/04/22 18:41:37 by kradoste         ###   ########.fr       */
+/*   Updated: 2018/04/23 16:28:41 by kradoste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,10 @@ typedef struct	s_list
 	struct s_list	*next;
 }				t_list;
 
+int				ft_digitlen(int x);
+int				ft_wordcountfix(const char *str, char c);
+int				ft_wordcount(const char *str);
+int				ft_isspace(char c);
 int				ft_power(int x, int base);
 int				ft_abs(int x);
 void			ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
