@@ -6,7 +6,7 @@
 #    By: kradoste <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/04/16 14:54:41 by kradoste          #+#    #+#              #
-#    Updated: 2018/04/23 13:31:24 by kradoste         ###   ########.fr        #
+#    Updated: 2018/04/26 12:23:56 by kradoste         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -14,7 +14,7 @@ NAME = libft.a
 CFLAG = -Wall -Werror -Wextra
 FILES = *.c
 OBJ = *.o
-BUP = *.\~
+BUP = *~
 
 all : $(NAME)
 
