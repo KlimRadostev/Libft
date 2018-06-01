@@ -6,11 +6,10 @@
 /*   By: kradoste <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/18 12:06:01 by kradoste          #+#    #+#             */
-/*   Updated: 2018/04/21 01:59:38 by kradoste         ###   ########.fr       */
+/*   Updated: 2018/06/01 14:53:33 by kradoste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 void	ft_memdel(void **ap)

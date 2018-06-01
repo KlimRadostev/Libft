@@ -6,11 +6,10 @@
 /*   By: kradoste <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/19 00:33:59 by kradoste          #+#    #+#             */
-/*   Updated: 2018/04/22 18:54:54 by kradoste         ###   ########.fr       */
+/*   Updated: 2018/06/01 14:59:05 by kradoste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 static char		**word_count_malloc(char *s, char c)

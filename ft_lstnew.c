@@ -6,11 +6,10 @@
 /*   By: kradoste <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/19 20:55:28 by kradoste          #+#    #+#             */
-/*   Updated: 2018/04/20 15:52:00 by kradoste         ###   ########.fr       */
+/*   Updated: 2018/06/01 14:52:41 by kradoste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 t_list	*ft_lstnew(void const *content, size_t content_size)

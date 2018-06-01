@@ -6,7 +6,7 @@
 /*   By: kradoste <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/16 16:16:35 by kradoste          #+#    #+#             */
-/*   Updated: 2018/04/23 16:28:41 by kradoste         ###   ########.fr       */
+/*   Updated: 2018/06/01 15:05:54 by kradoste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,10 @@
 # define LIBFT_H
 
 # include <string.h>
+# include <stdlib.h>
+# include <unistd.h>
+
+# define BUFF_SIZE 32
 
 typedef struct	s_list
 {
@@ -87,5 +91,6 @@ char			*ft_strjoin(char const *s1, char const *s2);
 char			*ft_strtrim(char const *s);
 char			**ft_strsplit(char const *s, char c);
 char			*ft_itoa(int n);
+int				get_next_line(const int fd, char **line);
 
 #endif
