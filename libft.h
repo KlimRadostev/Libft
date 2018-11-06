@@ -6,7 +6,7 @@
 /*   By: kradoste <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/16 16:16:35 by kradoste          #+#    #+#             */
-/*   Updated: 2018/06/01 15:05:54 by kradoste         ###   ########.fr       */
+/*   Updated: 2018/11/06 12:12:58 by kradoste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,31 @@
 # include <string.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdint.h>
+# include <stdarg.h>
 
 # define BUFF_SIZE 32
+# define UNS(x) (x == 'u' || x == 'U')
+# define INT(x) (x == 'i' || x == 'd' || x == 'D')
+# define HEO(x) (x == 'x' || x == 'X' || x == 'o' || x == 'O')
+# define NUM(x) (UNS(x) || HEO(x) || INT(x))
+# define LET(x) (x == 'c' || x == 'S' || x == 's' || x == 'C')
+
+typedef struct	s_printf
+{
+	va_list	ap;
+	char	*buf;
+	int		god;
+	int		len;
+	int		width;
+	int		hash;
+	int		plus;
+	int		zero;
+	int		pre;
+	int		dot;
+	int		space;
+	int		key;
+}				t_printf;
 
 typedef struct	s_list
 {
@@ -26,18 +49,18 @@ typedef struct	s_list
 	struct s_list	*next;
 }				t_list;
 
-int				ft_digitlen(int x);
-int				ft_wordcountfix(const char *str, char c);
-int				ft_wordcount(const char *str);
-int				ft_isspace(char c);
-int				ft_power(int x, int base);
-int				ft_abs(int x);
+/*
+**------------------------>LIST FUNCTIONS<------------------------------**
+*/
 void			ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 t_list			*ft_lstnew(void const *content, size_t content_size);
 void			ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void			ft_lstadd(t_list **alst, t_list *new);
 void			ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
+/*
+**------------------------>STRING FUNCTIONS<----------------------------**
+*/
 void			ft_putchar(char c);
 void			ft_putstr(char const *s);
 void			ft_putendl(char const *s);
@@ -60,6 +83,15 @@ char			*ft_strncat(char *s1, const char *s2, size_t n);
 size_t			ft_strlcat(char *dst, const char *src, size_t size);
 char			*ft_strchr(const char *s, int c);
 char			*ft_strrchr(const char *s, int c);
+/*
+**---------------------->NUMBER AND ASCII<-----------------------------**
+*/
+int				ft_digitlen(int x);
+int				ft_wordcountfix(const char *str, char c);
+int				ft_wordcount(const char *str);
+int				ft_isspace(char c);
+int				ft_power(int x, int base);
+int				ft_abs(int x);
 int				ft_atoi(const char *str);
 int				ft_isalpha(int c);
 int				ft_isdigit(int c);
@@ -68,6 +100,9 @@ int				ft_isascii(int c);
 int				ft_isprint(int c);
 int				ft_toupper(int c);
 int				ft_tolower(int c);
+/*
+**------------------------->MEMORY MANIPULATIONS<------------------------**
+*/
 void			*ft_memset(void *b, int c, size_t len);
 void			ft_bzero(void *s, size_t n);
 void			*ft_memcpy(void *dst, const void *src, size_t n);
@@ -77,6 +112,9 @@ void			*ft_memchr(const void *s, int c, size_t n);
 int				ft_memcmp(const void *s1, const void *s2, size_t n);
 void			*ft_memalloc(size_t size);
 void			ft_memdel(void **ap);
+/*
+**-------------------------->MEMORY IN STRINGS<---------------------------**
+*/
 char			*ft_strnew(size_t size);
 void			ft_strdel(char **as);
 void			ft_strclr(char *s);
@@ -91,6 +129,35 @@ char			*ft_strjoin(char const *s1, char const *s2);
 char			*ft_strtrim(char const *s);
 char			**ft_strsplit(char const *s, char c);
 char			*ft_itoa(int n);
+/*
+**----------------------------->FAVORITE FUNCS<---------------------------**
+*/
 int				get_next_line(const int fd, char **line);
+char			*str_append(char *s1, char *s2, int f1, int f2);
+char			*str_appendneg(char *s1, char *s2);
+int				ft_printf(const char *format, ...);
+/*
+**----------------------------->PRINTF<-----------------------------------**
+*/
+void			initialize_vars(t_printf *p);
+uintmax_t		get_unumber(va_list arg, int len, int large);
+intmax_t		get_number(va_list arg, int len, int large);
+char			*ft_itoa_base(intmax_t n);
+char			*ft_itoa_ubase(uintmax_t value, int base, int key);
+void			parse_lag(t_printf *p);
+void			print_str(char *str, t_printf *p);
+void			print_char(char c, t_printf *p);
+void			store_buffer2(t_printf *p, char *spec);
+void			store_buffer(t_printf *p, char *spec);
+int				parse_length(char *str, int max);
+char			*ft_alloc(char *buf, char *str);
+char			*ctos(char c);
+void			parse_width(char *str, t_printf *p, int max);
+void			parse_all(char *str, t_printf *p, int max);
+char			*og_str(char c, int len);
+char			*str_cut(char *s1, int len);
+void			precision_completion(char *str, t_printf *p, int m);
+void			flags_completion(char *str, t_printf *p, int m);
+void			plus_completion(char *str, t_printf *p, int m);
 
 #endif
