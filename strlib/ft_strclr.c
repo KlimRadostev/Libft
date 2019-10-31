@@ -1,30 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strclr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kradoste <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/30 12:29:03 by kradoste          #+#    #+#             */
-/*   Updated: 2019/10/31 02:00:02 by kradoste         ###   ########.fr       */
+/*   Created: 2018/04/18 13:20:58 by kradoste          #+#    #+#             */
+/*   Updated: 2019/10/04 22:10:30 by kradoste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include <string.h>
 
-# include <get_next_line.h>
-# include <functionality.h>
-# include <hash.h>
-# include <linklist.h>
-# include <memory.h>
-# include <printf.h>
-# include <printer.h>
-# include <queue.h>
-# include <strlib.h>
-# include <stack.h>
-# include <dictionary.h>
-# include <adjlist.h>
-# include <deck.h>
+#include "strlib.h"
 
-#endif
+static void	*ft_memset(void *b, int c, size_t len)
+{
+	unsigned char	*p;
+
+	p = (unsigned char *)b;
+	while (len)
+	{
+		p[len - 1] = (unsigned char)c;
+		len--;
+	}
+	return (b);
+}
+
+static void	ft_bzero(void *s, size_t n)
+{
+	ft_memset(s, 0, n);
+}
+
+void		ft_strclr(char *s)
+{
+	size_t	i;
+
+	if (!s)
+		return ;
+	i = ft_strlen(s);
+	ft_bzero((void *)s, i);
+}

@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kradoste <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/30 12:29:03 by kradoste          #+#    #+#             */
-/*   Updated: 2019/10/31 02:00:02 by kradoste         ###   ########.fr       */
+/*   Created: 2018/04/17 21:20:27 by kradoste          #+#    #+#             */
+/*   Updated: 2019/10/04 19:34:57 by kradoste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "memory.h"
 
-# include <get_next_line.h>
-# include <functionality.h>
-# include <hash.h>
-# include <linklist.h>
-# include <memory.h>
-# include <printf.h>
-# include <printer.h>
-# include <queue.h>
-# include <strlib.h>
-# include <stack.h>
-# include <dictionary.h>
-# include <adjlist.h>
-# include <deck.h>
+void	*ft_memmove(void *dst, const void *src, size_t len)
+{
+	size_t		i;
+	char		*d;
+	const char	*s;
 
-#endif
+	d = (char *)dst;
+	s = (char *)src;
+	i = 0;
+	if (dst <= src)
+		ft_memcpy(dst, src, len);
+	else
+	{
+		while (len--)
+			d[len] = s[len];
+	}
+	return (d);
+}

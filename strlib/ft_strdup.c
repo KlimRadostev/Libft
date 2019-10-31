@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kradoste <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/30 12:29:03 by kradoste          #+#    #+#             */
-/*   Updated: 2019/10/31 02:00:02 by kradoste         ###   ########.fr       */
+/*   Created: 2018/04/16 15:47:33 by kradoste          #+#    #+#             */
+/*   Updated: 2019/10/04 21:48:38 by kradoste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include <string.h>
+#include <stdlib.h>
 
-# include <get_next_line.h>
-# include <functionality.h>
-# include <hash.h>
-# include <linklist.h>
-# include <memory.h>
-# include <printf.h>
-# include <printer.h>
-# include <queue.h>
-# include <strlib.h>
-# include <stack.h>
-# include <dictionary.h>
-# include <adjlist.h>
-# include <deck.h>
+#include "strlib.h"
 
-#endif
+char	*ft_strdup(const char *s1)
+{
+	char	*key;
+	size_t	i;
+
+	i = ft_strlen(s1);
+	if (!(key = (char *)malloc(sizeof(char) * i + 1)))
+		return ((void*)0);
+	ft_strcpy(key, s1);
+	return (key);
+}

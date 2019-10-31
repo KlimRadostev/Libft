@@ -1,30 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_putendl.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kradoste <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/30 12:29:03 by kradoste          #+#    #+#             */
-/*   Updated: 2019/10/31 02:00:02 by kradoste         ###   ########.fr       */
+/*   Created: 2018/04/16 17:35:55 by kradoste          #+#    #+#             */
+/*   Updated: 2019/10/04 22:04:02 by kradoste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "printer.h"
 
-# include <get_next_line.h>
-# include <functionality.h>
-# include <hash.h>
-# include <linklist.h>
-# include <memory.h>
-# include <printf.h>
-# include <printer.h>
-# include <queue.h>
-# include <strlib.h>
-# include <stack.h>
-# include <dictionary.h>
-# include <adjlist.h>
-# include <deck.h>
-
-#endif
+void	ft_putendl(char const *s)
+{
+	ft_putstr(s);
+	ft_putchar('\n');
+}

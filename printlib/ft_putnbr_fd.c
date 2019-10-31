@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kradoste <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/30 12:29:03 by kradoste          #+#    #+#             */
-/*   Updated: 2019/10/31 02:00:02 by kradoste         ###   ########.fr       */
+/*   Created: 2018/04/16 19:06:30 by kradoste          #+#    #+#             */
+/*   Updated: 2019/10/04 22:14:34 by kradoste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "printer.h"
 
-# include <get_next_line.h>
-# include <functionality.h>
-# include <hash.h>
-# include <linklist.h>
-# include <memory.h>
-# include <printf.h>
-# include <printer.h>
-# include <queue.h>
-# include <strlib.h>
-# include <stack.h>
-# include <dictionary.h>
-# include <adjlist.h>
-# include <deck.h>
-
-#endif
+void	ft_putnbr_fd(int n, int fd)
+{
+	if (n == -2147483648)
+		ft_putstr_fd("-2147483648", fd);
+	else
+	{
+		if (n < 0)
+		{
+			ft_putchar_fd('-', fd);
+			n = n * -1;
+		}
+		if (n > 9)
+			ft_putnbr_fd(n / 10, fd);
+		ft_putchar_fd((n % 10) + '0', fd);
+	}
+}

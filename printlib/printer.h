@@ -1,30 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   printer.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kradoste <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/30 12:29:03 by kradoste          #+#    #+#             */
-/*   Updated: 2019/10/31 02:00:02 by kradoste         ###   ########.fr       */
+/*   Created: 2019/10/04 19:43:05 by kradoste          #+#    #+#             */
+/*   Updated: 2019/10/04 21:59:24 by kradoste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#ifndef PRINTER_H
+# define PRINTER_H
 
-# include <get_next_line.h>
-# include <functionality.h>
-# include <hash.h>
-# include <linklist.h>
-# include <memory.h>
-# include <printf.h>
-# include <printer.h>
-# include <queue.h>
-# include <strlib.h>
-# include <stack.h>
-# include <dictionary.h>
-# include <adjlist.h>
-# include <deck.h>
+void	ft_putchar(char c);
+void	ft_putstr(char const *s);
+void	ft_putendl(char const *s);
+void	ft_putnbr(int n);
+void	ft_putchar_fd(char c, int fd);
+void	ft_putstr_fd(char const *s, int fd);
+void	ft_putendl_fd(char const *s, int fd);
+void	ft_putnbr_fd(int n, int fd);
 
 #endif
